@@ -1,0 +1,14 @@
+{
+    "version" :"ver1",
+    "name" : "version1",
+    "services" :[
+        {
+            "name" : "service1",
+            "image" : "image1"
+        },
+        {
+            "name" : "service2",
+            "image" : "image2"
+        }
+    ]
+}
