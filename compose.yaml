@@ -2,7 +2,9 @@ version: "3.8"
 name : dockertut
 services : 
    nodeapp:
-     image: dockerapp
+     build:
+        context: ./myApp
+        dockerfile: Dockerfile
      container_name: sampledocker
      environment:
       - PORT=4000
@@ -21,7 +23,9 @@ services :
        MONGO_INITDB_ROOT_PASSWORD: password
 
    authservice:
-     image: auth
+     build:
+        context: ./auth
+        dockerfile: Dockerfile
      container_name: sampleauthservice
      ports:
        - 5001:5001
@@ -30,8 +34,9 @@ services :
      environment:
        - PORT=5001
    client:
-     image: nextjs
-     container_name: sampleclient
+     build:
+        context: ./client
+        dockerfile: Dockerfile
      ports:
        - 3000:3000
      depends_on:
