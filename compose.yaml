@@ -29,3 +29,12 @@ services :
        - nodeapp
      environment:
        - PORT=5001
+   client:
+     image: nextjs
+     container_name: sampleclient
+     ports:
+       - 3000:3000
+     depends_on:
+       - nodeapp
+     environment:
+       - PORT=3000
